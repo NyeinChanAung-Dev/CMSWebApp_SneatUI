@@ -1,0 +1,61 @@
+﻿@model CMSWebApp.Models.Content
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Content /</span> Delete Content</h4>
+
+        <!-- Basic Layout & Basic with Icons -->
+        <div class="row">
+            <!-- Basic Layout -->
+            <div class="col-xxl">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <input asp-for="Title" class="form-control" disabled />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label asp-for="BodyText" class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <textarea asp-for="BodyText" class="form-control" disabled
+                                          aria-label="body text"
+                                          aria-describedby="basic-icon-default-message2"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label asp-for="CreationTime" class="col-md-2 col-form-label"></label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="datetime-local" asp-for="CreationTime" disabled />
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="Id" />
+                                <div class="col-sm-10">
+                                    <input type="submit" value="Delete" class="btn btn-danger" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="Index" class="btn btn-primary"><span class="tf-icons bx bx-arrow-back"></span> Back to List</a>
+            </div>
+        </div>
+    </div>
+    <!-- / Content -->
+
+    <div class="content-backdrop fade"></div>
+</div>
+<!-- Content wrapper -->
